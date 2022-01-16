@@ -1,0 +1,89 @@
+<template>
+<div @click="cainiao">cainiao</div>
+<div @click="pinduoduo">pinduoduo</div>
+<div @click="doudian">doudian</div>
+<div @click="getCmpts">getCmpts</div>
+<div @click="getCmpts2">getCmpts2</div>
+<div @click="getPrinters">getPrinters</div>
+<div @click="getPrinters2">getPrinters2</div>
+<div @click="print">print</div>
+<div @click="task">task</div>
+</template>
+<script lang="ts" setup>
+import printer from './print';
+
+const cainiao = () => {
+  printer.connect('cainiao', res => console.log(res));
+}
+
+const pinduoduo = () => {
+  printer.connect('pinduoduo', res => console.log(res));
+}
+
+const doudian = () => {
+  printer.connect('doudian', res => console.log(res));
+}
+
+const getCmpts = () => {
+  printer.getCmpts((res: any): void => {
+    console.log(res);  // res 是回参
+  });
+}
+const getCmpts2 = () => {
+  printer.getCmpts({
+    callback: (res: any): void => {
+      console.log(res);
+    }
+  });
+}
+
+const getPrinters = () => {
+  printer.getPrinters((res: any): void => {
+    console.log(res);
+  });
+}
+
+const getPrinters2 = () => {
+  printer.getPrinters({
+    cmpt: 'pinduoduo',
+    callback(res: any): void {
+      console.log(res);
+    }
+  });
+}
+
+const print = () => {
+  printer.print({
+    cmpt: 'pinduoduo',
+    printer: '',
+    callback(res: any): void {console.log(res)},
+    documents: [{
+			documentID: "0123456789",
+			contents: [{
+				data: {
+					nick: "张三"
+				},
+				templateURL: "http://cloudprint.cainiao.com/template/standard/278250/1"
+			}]
+		}]
+  });
+}
+
+const task = () => {
+  printer.task();
+}
+
+</script>
+
+<style>
+#app > div {
+  cursor: pointer;
+  background: #999;
+  color: #fff;
+  line-height: 30px;
+  margin: 10px auto;
+  width: 80px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+</style>
