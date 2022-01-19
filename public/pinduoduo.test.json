@@ -1,0 +1,17 @@
+{
+  "cmpt": "cainiao",
+  "printer": "PDF Printer",
+  "documents": [
+    {
+      "documentID": "",
+      "contents": [
+        {
+          "data": {
+            
+          },
+          "templateURL": "http://localhost:3000/template-pinduoduo.json"
+        }
+      ]
+    }
+  ]
+}
