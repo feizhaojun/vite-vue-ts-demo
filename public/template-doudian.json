@@ -3,29 +3,54 @@
   xmlns=""
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation=""
-  width="76"
-  height="20"
+  width="210"
+  height="285"
   splitable="false"
 >
-  <layout id="element_layout_11" left="2" top="9" width="42" height="5" style="">
+  <layout id="doudian-template-1" width="42" height="5" left="2" top="9" style="">
     <text style="fontFamily:黑体;fontSize:8;">
-      <![CDATA[<%=_data.productInfo%>]]>
+      <![CDATA[头部信息]]>
     </text>
   </layout>
-  <layout id="element_layout_13" left="2" top="13" width="72" height="10" style="overflow:hidden;">
-    <text style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
-      <![CDATA[<%=_data.shopName%>]]>
-    </text>
-  </layout>
-  <layout id="element_layout_1" left="1" top="23" width="75" height="20">
-    <barcode type="code128" style="hideText:false;" value="<%=_data.orderId%>" ratioMode="ignoreRatio" />
-  </layout>
-  <layout id="element_layout_40" left="1" top="1" width="40" height="8" style="overflow:visible;">
-    <image src="<%=_data.remark%>" allowFailure="false" />
-  </layout>
-  <layout id="element_layout_14" left="2" top="43" width="53" height="8" style="overflow:hidden;">
-    <text style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
-      <![CDATA[<%=__data.productCount%>]]>
-    </text>
-  </layout>
+  
+  <table id="doudian-template-2" width="210" height="320" left="0" top="18" zIndex="0">
+    <tr>
+      <td width="20" height="10">
+        <text style="fontFamily:黑体;fontSize:8;">
+          <![CDATA[一一一]]>
+        </text>
+      </td>
+      <td width="20" height="10">
+        <text style="fontFamily:黑体;fontSize:8;">
+          <![CDATA[二二二]]>
+        </text>
+      </td>
+      <td width="20" height="10">
+        <text style="fontFamily:黑体;fontSize:8;">
+          <![CDATA[三三三]]>
+        </text>
+      </td>
+    </tr>
+    <% if(_data.name) { %>
+      <% for (var i=0;i<_data.name.length;i++) {%>
+        <tr>
+        <td width="20" height="10">
+          <text style="fontFamily:黑体;fontSize:8;">
+            <![CDATA[<%=_data.name[i].col1%>]]>
+          </text>
+        </td>
+        <td width="20" height="10">
+          <text style="fontFamily:黑体;fontSize:8;">
+          <![CDATA[<%=_data.name[i].col2%>]]>
+          </text>
+        </td>
+        <td width="20" height="10">
+          <text style="fontFamily:黑体;fontSize:8;">
+          <![CDATA[<%=_data.name[i].col3%>]]>
+          </text>
+        </td>
+        </tr>
+      <% } %>
+    <% } %>
+  </table>
 </page>

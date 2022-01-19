@@ -7,7 +7,15 @@
       "contents": [
         {
           "data": {
-            "name": "zhangsan"
+            "name": [{
+              "col1": "1",
+              "col2": "2",
+              "col3": "3"
+            },{
+              "col1": "1",
+              "col2": "2",
+              "col3": "3"
+            }]
           },
           "templateURL": "http://localhost:3000/template-doudian.json"
         }
@@ -15,3 +23,22 @@
     }
   ]
 }
+
+
+  
+<layout id="element_layout_13" left="2" top="13" width="72" height="10" style="overflow:hidden;">
+<text style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+  <![CDATA[店铺名称]]>
+</text>
+</layout>
+<layout id="element_layout_1" left="1" top="23" width="75" height="20">
+<barcode type="code128" style="hideText:false;" value="1" ratioMode="ignoreRatio" />
+</layout>
+<layout id="element_layout_40" left="1" top="1" width="40" height="8" style="overflow:visible;">
+<image src="" allowFailure="false" />
+</layout>
+<layout id="element_layout_14" left="2" top="43" width="53" height="8" style="overflow:hidden;">
+<text style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+  <![CDATA[产品数量]]>
+</text>
+</layout>
