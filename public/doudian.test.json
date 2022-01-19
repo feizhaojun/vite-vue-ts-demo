@@ -1,0 +1,17 @@
+{
+  "cmpt": "doudian",
+  "printer": "Microsoft Print to PDF",
+  "documents": [
+    {
+      "documentID": "",
+      "contents": [
+        {
+          "data": {
+            "name": "zhangsan"
+          },
+          "templateURL": "http://localhost:3000/template-doudian.json"
+        }
+      ]
+    }
+  ]
+}
