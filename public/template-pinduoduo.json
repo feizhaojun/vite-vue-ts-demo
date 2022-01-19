@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page height="120" width="520">
+    <table height="320" top="0" left="0" width="520" id="BCB863D6-76E5-4907-BD35-395A87095DC7" zIndex="0" >
+<tr>
+<th width="172">
+<text autosize="true" value="第1列"/>
+</th>
+<th width="172">
+<text autosize="true" value="第2列"/>
+</th>
+<th width="177">
+<text autosize="true" value="第3列"/>
+</th>
+</tr>
+<% if(data.name) {%>
+<% for (var i=0;i<data.name.length;i++) {%>
+<tr>
+<td width="172">
+<text autosize="true" value="<%=data.name[i].col1%>"/>
+</td>
+<td width="172">
+<text autosize="true" value="<%=data.name[i].col2%>"/>
+</td>
+<td width="177">
+<text autosize="true" value="<%=data.name[i].col3%>"/>
+</td>
+</tr>
+<% } %>
+<% } %>
+</table>
+</page>

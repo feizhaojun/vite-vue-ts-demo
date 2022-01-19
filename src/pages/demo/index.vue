@@ -1,16 +1,16 @@
 <template>
-<div @click="cainiao">cainiao</div>
-<div @click="pinduoduo">pinduoduo</div>
-<div @click="doudian">doudian</div>
-<div @click="getCmpts">getCmpts</div>
-<div @click="getCmpts2">getCmpts2</div>
-<div @click="getPrinters">getPrinters</div>
-<div @click="getPrinters2">getPrinters2</div>
-<div @click="print">print</div>
+<div @click="cainiao">连接菜鸟打印组件</div>
+<div @click="pinduoduo">连接拼多多打印组件</div>
+<div @click="doudian">连接抖店打印组件</div>
+<div @click="getCmpts">获取已连接打印组件1</div>
+<div @click="getCmpts2">获取已连接打印组件2</div>
+<div @click="getPrinters">获取打印机1</div>
+<div @click="getPrinters2">获取打印机2</div>
+<div @click="print">打印测试</div>
 <div @click="task">task</div>
 </template>
 <script lang="ts" setup>
-import printer from './print';
+import printer from 'print-brigde';
 
 const cainiao = () => {
   printer.connect('cainiao', res => console.log(res));
@@ -82,7 +82,7 @@ const task = () => {
   color: #fff;
   line-height: 30px;
   margin: 10px auto;
-  width: 80px;
+  width: 160px;
   padding: 5px 10px;
   border-radius: 5px;
 }

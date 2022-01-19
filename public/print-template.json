@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page
+  xmlns="http://cloudprint.cainiao.com/print"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://cloudprint.cainiao.com/print http://cloudprint-docs-resource.oss-cn-shanghai.aliyuncs.com/lpml_schema.xsd"
+  xmlns:editor="http://cloudprint.cainiao.com/schema/editor"
+  width="210"
+  height="285"
+  splitable="true"
+>
+  <header height="0"></header>
+  <footer height="0"></footer>
+  <layout editor:_for_="16092369776269" id="1609236977627797" width="25" height="7.12" left="90.46" top="3.43">
+    <text style="fontFamily:SimHei;fontWeight:bold;fontSize:16;align:center;">
+      <![CDATA[拿货清单]]>
+    </text>
+  </layout>
+  <layout editor:_for_="1609237069895367" id="1609237069895195" width="194.34" height="10.03" left="2.73" top="10.91">
+      <text editor:_printName_="editor:_printName_" style="fontFamily:SimHei;fontSize:10;valign:middle;">
+        <![CDATA[打印时间<%=_data.nowTime%>　货品：<%=_data.querySkuSpeciesCount%>种 <%=_data.querySkuSum%>件　供应商数量：<%=_data.supplierSum%>个　采购总额：<%=_data.purchasePriceSum%>元]]>
+      </text>
+  </layout>
+  <layout editor:_for_="1609237206730394" id="1609237206733436" width="200" left="8.73" top="22.08" splitable="true">
+    <table width="200" style="borderLeft:1;">
+      <tr>
+        <% if(_data.exclude.indexOf("mainImgUrl" )== -1 || _data.exclude.indexOf("spuName")== -1 || _data.exclude.indexOf("goodsNo") == -1){ %>
+          <th width="59" height="7.94" style="padding:2;">
+            <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+              <![CDATA[货品]]>
+            </text>
+          </th>
+        <% } %>
+        <% if(_data.exclude.indexOf("itemNo" ) == -1){ %>
+          <th width="35.98" height="7.94" style="padding:2;">
+            <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+              <![CDATA[供货商货号]]>
+            </text>
+          </th>
+        <% } %>
+        <% if(_data.exclude.indexOf("skuName" )== -1){ %>
+          <th width="28.31" height="7.94" style="padding:2;">
+            <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+              <![CDATA[规格]]>
+            </text>
+          </th>
+        <% } %>
+        <% if(_data.exclude.indexOf("skuNo" )== -1){ %>
+          <th width="21.7" height="7.94" style="padding:2;">
+            <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+              <![CDATA[SKU商家编码]]>
+            </text>
+          </th>
+        <% } %>
+        <% if(_data.exclude.indexOf("purchasePrice" )== -1){ %>
+          <th width="17.99" height="7.94" style="padding:2;">
+            <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+              <![CDATA[拿货价（元）]]>
+            </text>
+          </th>
+        <% } %>
+        <th width="18.76" height="7.94" style="padding:2;">
+          <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+            <![CDATA[供货商备货数量]]>
+          </text>
+        </th>
+        <th width="18.26" height="7.94" style="padding:2;">
+          <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+            <![CDATA[实际备货数量]]>
+          </text>
+        </th>
+      </tr>
+      <% var supplierName='' ;%>
+      <% for(var i=0; i<_data.stallsdetail.length; i++){ %>
+        <tr>
+          <td colspan="7" height="7.41" style="padding:2;">
+              <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+                <![CDATA[<%=_data.stallsdetail[i].supplierName%> 总计：<%=_data.stallsdetail[i].totalSku%>种 <%=_data.stallsdetail[i].totalNum%>个 拿货金额（元）：<%=_data.stallsdetail[i].supplierPurchasePriceSum%> ]]>
+              </text>
+          </td>
+        </tr>
+        <% for(var j=0; j<_data.stallsdetail[i].spuList.length; j++){ %>
+          <% for(var r=0; r<_data.stallsdetail[i].spuList[j].skuList.length; r++){ %>
+            <tr>
+              <% if(r == 0){ %>
+                <% if(_data.exclude.indexOf("mainImgUrl") == -1 || _data.exclude.indexOf("spuName" )== -1 || _data.exclude.indexOf("goodsNo" )== -1){ %>
+                  <td rowspan="<%=_data.stallsdetail[i].spuList[j].skuList.length%>" width="59" style="padding:1 8 1 1;">
+                    <layout id="1606286816296542" width="10.07" height="10.07" style="margin:0 0 0 0;">
+                      <image src="<%=_data.stallsdetail[i].spuList[j].imgUrl%>"  allowFailure="true" />
+                    </layout>
+                    <layout id="161718214066212" width="45.07" left="10" orientation="vertical" style="">
+                      <% if(_data.showSpuName){ %>
+                        <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;valign:middle;direction:rtr;">
+                          <![CDATA[<%=_data.stallsdetail[i].spuList[j].spuName%>]]>
+                        </text>
+                      <% } %>
+                      <% if(_data.stallsdetail[i].spuList[j].goodsNo !== null){ %>
+                        <text style="fontFamily:SimHei;orientation:undefined;">
+                          <![CDATA[商家编码：<%=_data.stallsdetail[i].spuList[j].goodsNo || "无"%>]]>
+                        </text>
+                      <%} else { %>
+                        <text style="fontFamily:SimHei;orientation:undefined;">
+                          <![CDATA[商家编码：无]]>
+                        </text>
+                      <% } %>
+                    </layout>
+                  </td>
+                <% } %>
+              <% } %>
+              <% if(_data.exclude.indexOf("itemNo" )== -1){ %>
+                <td width="35.98" style="padding:1 8 1 1;">
+                  <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+                    <![CDATA[<%=_data.stallsdetail[i].spuList[j].skuList[r].itemNo|| "无"%>]]>
+                  </text>
+                </td>
+              <% } %>
+              <% if(_data.exclude.indexOf("skuName" )== -1){ %>
+                <td style="padding:1;">
+                  <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+                    <![CDATA[<%=_data.stallsdetail[i].spuList[j].skuList[r].skuName%>]]>
+                  </text>
+                </td>
+              <% } %>
+              <% if(_data.exclude.indexOf("skuNo" )== -1){ %>
+                <td style="padding:1;">
+                  <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+                    <![CDATA[<%=_data.stallsdetail[i].spuList[j].skuList[r].skuNo|| "无"%>]]>
+                  </text>
+                </td>
+              <% } %>
+              <% if(_data.exclude.indexOf("purchasePrice" )== -1){ %>
+                <td style="padding:1;">
+                  <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+                    <![CDATA[<%=_data.stallsdetail[i].spuList[j].skuList[r].purchasePrice%>]]>
+                  </text>
+                </td>
+              <% } %>
+              <td height="7.94" style="padding:1;">
+                <text style="fontFamily:SimHei;fontSize:10;lineHeight:4;align:center;valign:middle;">
+                  <![CDATA[<%=_data.stallsdetail[i].spuList[j].skuList[r].prepareNum%>]]>
+                </text>
+              </td>
+              <td height="7.94" style="padding:1;">
+                <text style="fontFamily:SimHei;orientation:undefined;align:center;">
+                  <![CDATA[]]>
+                </text>
+              </td>
+            </tr>
+          <% } %>
+        <% } %>
+      <% } %>
+    </table>
+  </layout>
+</page>

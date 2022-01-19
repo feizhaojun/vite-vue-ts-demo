@@ -553,6 +553,11 @@
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.1"
 
+"print-brigde@^0.1.0":
+  "integrity" "sha512-FOq8EmT9G23is5ujgCPuCxqwX8+SW5Aclp7kSVqWxJJLQ9BjO0i4Cruxn13zHNyzOXl0wbMzJvHBcuCXzuVVrw=="
+  "resolved" "https://registry.npmjs.org/print-brigde/-/print-brigde-0.1.0.tgz"
+  "version" "0.1.0"
+
 "promise@^7.0.1":
   "integrity" "sha1-BktyYCsY+Q8pGSuLG8QY/9Hr078="
   "resolved" "https://registry.npmmirror.com/promise/download/promise-7.3.1.tgz"
