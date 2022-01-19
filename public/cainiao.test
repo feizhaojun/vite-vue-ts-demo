@@ -1,0 +1,63 @@
+{
+  "cmpt": "cainiao",
+  "documents": [
+    {
+      "documentID": "",
+      "contents": [
+        {
+          "data": {
+            "exclude": [],
+            "stallsdetail": [
+              {
+                "supplierId": "5351",
+                "supplierName": "rabbit的供货商",
+                "supplierGroupName": "rabbit新建",
+                "totalSku": 1,
+                "totalNum": 1,
+                "spuList": [
+                  {
+                    "goodsNo": "",
+                    "spuName": "（内部测试 - 勿拍）蓝天new",
+                    "spuId": "7387",
+                    "supplierId": "5351",
+                    "imgUrl": "https://img.alicdn.com/bao/uploaded/i3/2278681190/O1CN01Yo6zbb1Kf3zHfoXOy_!!2278681190.png",
+                    "skuList": [
+                      {
+                        "supplierId": "5351",
+                        "sellerSkuId": "23464",
+                        "skuName": "紫罗兰",
+                        "itemNo": "",
+                        "purchasePrice": 0,
+                        "skuNo": "lantian_003",
+                        "packFlag": 0,
+                        "prepareSales": 1,
+                        "inventory": 0,
+                        "moreNum": 0,
+                        "prepareNum": 1,
+                        "takeGoodsNum": null,
+                        "remark": "",
+                        "multiSupplier": null
+                      }
+                    ],
+                    "spuGoodsNo": "",
+                    "multiSupplier": false,
+                    "goodsLink": "https://item.taobao.com/item.htm?ft=t&id=641528701128"
+                  }
+                ],
+                "supplierPurchasePriceSum": 0
+              }
+            ],
+            "nowTime": "2022-01-18 13:36:21",
+            "querySkuSpeciesCount": 47,
+            "querySkuSum": 602,
+            "supplierSum": 8,
+            "qrcode": "",
+            "showSpuName": true,
+            "purchasePriceSum": 1488
+          },
+          "templateURL": "http://localhost:3000/print-template.json"
+        }
+      ]
+    }
+  ]
+}

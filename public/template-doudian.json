@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page
+  xmlns=""
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation=""
+  width="76"
+  height="20"
+  splitable="false"
+>
+  <layout id="element_layout_11" left="2" top="9" width="42" height="5" style="">
+    <text style="fontFamily:黑体;fontSize:8;">
+      <![CDATA[<%=_data.productInfo%>]]>
+    </text>
+  </layout>
+  <layout id="element_layout_13" left="2" top="13" width="72" height="10" style="overflow:hidden;">
+    <text style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+      <![CDATA[<%=_data.shopName%>]]>
+    </text>
+  </layout>
+  <layout id="element_layout_1" left="1" top="23" width="75" height="20">
+    <barcode type="code128" style="hideText:false;" value="<%=_data.orderId%>" ratioMode="ignoreRatio" />
+  </layout>
+  <layout id="element_layout_40" left="1" top="1" width="40" height="8" style="overflow:visible;">
+    <image src="<%=_data.remark%>" allowFailure="false" />
+  </layout>
+  <layout id="element_layout_14" left="2" top="43" width="53" height="8" style="overflow:hidden;">
+    <text style="fontFamily:黑体;fontWeight:bold;fontSize:auto;">
+      <![CDATA[<%=__data.productCount%>]]>
+    </text>
+  </layout>
+</page>
